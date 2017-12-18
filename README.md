@@ -1,57 +1,34 @@
-# Project Name
+## [](https://github.com/azure-samples/data-lake-s3-and-powerbi-demo-pipeline#project-name)Project Name
 
-(short, 1-3 sentenced, description of the project)
+Move data from an AWS S3 bucket to Azure Data Lake Store via Azure Data Factory, transform the data with Azure Data Lake Analytics, and then output the data to PowerBI. 
 
-## Features
+### [](https://github.com/azure-samples/data-lake-s3-and-powerbi-demo-pipeline#features)Features
 
 This project framework provides the following features:
 
-* Feature 1
-* Feature 2
-* ...
+- Data Factory JSON definition files to build the pipeline
+- Powershell scripts to use in Azure
+- U-SQL script to transform the data
+- Sample data for use in the demo
 
-## Getting Started
+### [](https://github.com/azure-samples/data-lake-s3-and-powerbi-demo-pipeline#getting-started)Getting Started
 
-### Prerequisites
+#### [](https://github.com/azure-samples/data-lake-s3-and-powerbi-demo-pipeline#prerequisites)Prerequisites
 
-(ideally very short, if any)
+- Azure Powershell
+- Visual Studios (optional)
+- PowerBI
 
-- OS
-- Library version
-- ...
+#### [](https://github.com/azure-samples/data-lake-s3-and-powerbi-demo-pipeline#quickstart)Quickstart
 
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
-
-### Quickstart
 (Add steps to get up and running quickly)
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+1. git clone https://github.com/Azure-Samples/data-lake-s3-and-powerbi-demo-pipeline.git
+2. cd C:
+3. mkdir ADFv2QuickStartPSH
 
+### [](https://github.com/azure-samples/data-lake-s3-and-powerbi-demo-pipeline#resources)Resources
 
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+- [](https://azure.microsoft.com/en-us/solutions/data-lake/)Azure Data Lake
+- [](https://azure.microsoft.com/en-us/services/data-factory/)Azure Data Factory
+- [](ms.portal.azure.com)Azure Portal
