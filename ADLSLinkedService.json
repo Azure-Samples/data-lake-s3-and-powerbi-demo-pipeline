@@ -1,0 +1,21 @@
+{
+    "name": "AzureDataLakeStoreLinkedService",
+    "properties": {
+        "type": "AzureDataLakeStore",
+        "typeProperties": {
+            "dataLakeStoreUri": "adl://<adls account name>.azuredatalakestore.net",
+            "tenant": "<tenant>",
+            "subscriptionId": "<subscription ID>",
+            "resourceGroupName": "<resource group>",    
+	    "servicePrincipalId": "<application ID>",
+	    "servicePrincipalKey": {
+		"type": "SecureString",
+		"value": "<authentication key>"
+	    }
+        },
+	"connectVia": {
+		"referenceName": "<Integration runtime name>",
+		"type": "IntegrationRuntimeReference"
+	}
+    }
+}

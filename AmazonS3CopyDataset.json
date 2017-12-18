@@ -1,0 +1,14 @@
+{
+    "name": "AmazonS3CopyDataset",
+    "properties": {
+        "type": "AmazonS3Object",
+        "linkedServiceName": {
+            "referenceName": "AmazonS3LinkedService",
+            "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+            "bucketName": "endtoenddemo",
+            "prefix": "EPA\/Florida\/"
+        }
+    }
+}

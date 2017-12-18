@@ -1,0 +1,32 @@
+{
+    "name": "AWSToADLSCopyPipeline",
+    "properties": 
+    {
+        "description": "Copy files as is from AWS to ADLS",
+        "activities":[{
+        	"name": "CopyToADLS",
+        	"type": "Copy",
+        	"inputs": [{
+                	"referenceName": "AmazonS3CopyDataset",
+                	"type": "DatasetReference"
+            	}],
+        	"outputs": [{
+                	"referenceName": "ADLSCopyDataset",
+                	"type": "DatasetReference"
+            	}],
+        	"typeProperties": {
+            		"source": {
+                		"type": "FileSystemSource"
+            		},
+            		"sink": {
+                		"type": "AzureDataLakeStoreSink",
+                		"copyBehavior": "PreserveHierarchy"
+            		}
+        	},
+		"policy": {
+			"retry": 5,
+			"timeout": "01:00:00"
+		}
+    	}]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "AmazonS3LinkedService",
+    "properties": {
+        "type": "AmazonS3",
+        "typeProperties": {
+            "accessKeyId": "<Access Key ID>",
+            "secretAccessKey": {
+                    "type": "SecureString",
+                    "value": "<secretAccessKey>"
+            }
+        }
+    },
+    "connectVia": {
+	"referenceName":"AWSToADLSIR",
+	"type":"IntegrationRuntimeReference"
+    }
+}
