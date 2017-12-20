@@ -1,5 +1,5 @@
 {
-    "name": "AzureDataLakeStoreLinkedService",
+    "name": "ADLSLinkedService",
     "properties": {
         "type": "AzureDataLakeStore",
         "typeProperties": {
