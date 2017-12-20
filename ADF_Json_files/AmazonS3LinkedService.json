@@ -11,7 +11,7 @@
         }
     },
     "connectVia": {
-	"referenceName":"AWSToADLSIR",
+	"referenceName":"AWSToADLSIntegrationRuntime",
 	"type":"IntegrationRuntimeReference"
     }
 }
