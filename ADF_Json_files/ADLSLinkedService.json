@@ -14,7 +14,7 @@
 	    }
         },
 	"connectVia": {
-		"referenceName": "<Integration runtime name>",
+		"referenceName": "AWSToADLSIntegrationRuntime",
 		"type": "IntegrationRuntimeReference"
 	}
     }
