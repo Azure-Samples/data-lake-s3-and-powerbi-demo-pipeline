@@ -22,9 +22,9 @@ $AWSToADLSPipelineFile = $AWSToADLSPipelineName + ".json"
 #Run each group of these scripts individually by copy+pasting into PowerShell window to ensure that each object is created before its dependents.
 
 #Group 1: Create the integration runtime and linked services
-Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName -$resourceGroupName -DataFactoryName $dataFactoryName -Name $integrationRuntimeName
-Set-AzureRmDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $AWSS3Linked -DefinitionFile $AmazonS3LinkedServiceFile
-Set-AzureRmDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name "ADLSLinkedService" -DefinitionFile $ADLSLinkedServiceFile
+Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName -$resourceGroupName -DataFactoryName $dataFactoryName -Name $integrationRuntimeName -Location "East US 2"
+Set-AzureRmDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $AmazonS3LinkedServiceName -DefinitionFile $AmazonS3LinkedServiceFile
+Set-AzureRmDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $ADLSLinkedServiceName -DefinitionFile $ADLSLinkedServiceFile
 
 #Group 2: Create the datasets
 Set-AzureRmDataFactoryV2Dataset -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $AmazonS3DatasetName -DefinitionFile $AmazonS3DatasetFile
@@ -35,7 +35,7 @@ Set-AzureRmDataFactoryV2Pipeline -ResourceGroupName $resourceGroupName -DataFact
 
 #Group 4: Run and monitor the pipeline
 #Run the pipeline
-$runId = Invoke-AzureRmDataFactoryV2Pipeline -ResourceGroupName $resourceGroup -DataFactoryName $dataFactory -PipelineName $pipeline
+$runId = Invoke-AzureRmDataFactoryV2Pipeline -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -PipelineName $AWSToADLSPipelineName
 
 #Monitor the pipeline until it finishes copying data
 while ($True) {
