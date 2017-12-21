@@ -5,7 +5,7 @@
 #Define all object names here. Included are some default names to match the JSON files, edit them as necessary to match your own files.  
 $resourceGroupName = "<your resource group>"
 $dataFactoryName = "<your data factory>"
-$integrationRuntimeName = "AWSToADLSIR"
+$integrationRuntimeName = "AWSToADLSIntegrationRuntime"
 $ADLSLinkedServiceName = "ADLSLinkedService"
 $AmazonS3LinkedServiceName = "AmazonS3LinkedService"
 $ADLSDatasetName = "ADLSCopyDataset"
