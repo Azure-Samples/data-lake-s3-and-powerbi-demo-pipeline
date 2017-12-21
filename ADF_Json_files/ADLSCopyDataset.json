@@ -7,7 +7,7 @@
             "type": "LinkedServiceReference"
         },
         "typeProperties": {
-            "folderPath": "EPA_data\/raw_data\/aqcsv\/state\/17"
+            "folderPath": "EPA_data\/raw_data\/aqi\/year\/"
         }
     }
 }
