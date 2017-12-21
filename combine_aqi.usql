@@ -1,0 +1,35 @@
+//Create rowset from EPA_data
+@extracted_data = 
+    EXTRACT state                       string,
+            country                     string,
+            year                        int,
+            days_with_records           int,
+            good_days                   int,
+            moderate_days               int,
+            unhealthy_sensative_days    int,
+            unhealthy_days              int,
+            very_unhealthy_days         int,
+            hazardous_days              int,
+            max_aqi                     int,
+            ninetieth_percentile_aqi    int,
+            median_aqi                  int,
+            days_high_CO                int,
+            days_high_NO2               int,
+            days_high_ozone             int,
+            days_high_SO2               int,
+            days_high_PM25              int,
+            days_high_PM10              int,
+            _year                       int
+    FROM "/EPA_data/raw_data/aqi/year/annual_aqi_by_county_{_year}.csv"
+    USING Extractors.Csv(skipFirstNRows:1);
+
+//Output all data to a single .csv file
+@outputAllStates =
+    SELECT *
+    FROM @extracted_data;
+
+OUTPUT @outputAllStates
+    TO "/EPA_data/cooked_data/aqi/state/aqi_all_states_all_years.csv"
+    ORDER BY year
+    USING Outputters.Csv(outputHeader: true);
+
