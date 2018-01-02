@@ -22,7 +22,7 @@ $AWSToADLSPipelineFile = $AWSToADLSPipelineName + ".json"
 #Run each group of these scripts individually by copy+pasting into PowerShell window to ensure that each object is created before its dependents.
 
 #Group 1: Create the integration runtime and linked services
-Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName -$resourceGroupName -DataFactoryName $dataFactoryName -Name $integrationRuntimeName -Location "East US 2"
+Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $integrationRuntimeName -Location "East US 2"
 Set-AzureRmDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $AmazonS3LinkedServiceName -DefinitionFile $AmazonS3LinkedServiceFile
 Set-AzureRmDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $ADLSLinkedServiceName -DefinitionFile $ADLSLinkedServiceFile
 
