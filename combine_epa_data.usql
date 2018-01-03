@@ -1,4 +1,3 @@
-//Create rowset from EPA_data
 @extracted_data = 
     EXTRACT state                       string,
             country                     string,
@@ -22,14 +21,10 @@
             _year                       int
     FROM "/EPA_data/raw_data/aqi/year/annual_aqi_by_county_{_year}.csv"
     USING Extractors.Csv(skipFirstNRows:1);
-
-//Output all data to a single .csv file
-@outputAllStates =
-    SELECT *
-    FROM @extracted_data;
-
-OUTPUT @outputAllStates
+                       
+OUTPUT @extracted_data
     TO "/EPA_data/cooked_data/aqi/state/aqi_all_states_all_years.csv"
     ORDER BY year
     USING Outputters.Csv(outputHeader: true);
+
 
