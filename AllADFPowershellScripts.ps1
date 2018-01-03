@@ -30,7 +30,7 @@ $AWSToADLSPipelineFile = $AWSToADLSPipelineName + ".json"
 #Group 1: Create the integration runtime and linked services
 cd $ADFpath
 #Integration runtime
-Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $integrationRuntimeName -Location "East US 2"
+Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $integrationRuntimeName -Location "East US 2" -Type Managed
 #S3 Linked Service
 Set-AzureRmDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $AmazonS3LinkedServiceName -DefinitionFile $AmazonS3LinkedServiceFile
 #ADLS Linked Service
